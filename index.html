@@ -103,7 +103,7 @@
                     },
                     error:
                         function (msg) {
-                            alert("Voted for:" + selectedCandidate);
+                            alert("Not Voted due to error :" + selectedCandidate);
                         }
                 });
             });
@@ -118,7 +118,7 @@
                         alert(CandidateName + " - Added for this Poll");
                     },
                     error: function (msg) {
-                        alert(CandidateName + " - Added for this Poll");
+                        alert(CandidateName + "- Not Added for this Poll due to connection error");
                     }
                 });
             });
