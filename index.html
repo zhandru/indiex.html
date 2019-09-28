@@ -32,7 +32,7 @@
     </div>
     <script>
 
-        var service = 'http://localhost:51890/api'; // Please replace this service name with original endpoint
+        var service = 'http://localhost:50006/votes'; // Please replace this service name with original endpoint
         var hardcoded_Json = [{
             "state": {
                 "data":
@@ -90,14 +90,14 @@
                 }
             });
             var selectedCandidate = $("#CandidateName option:selected").text();
-            var service2 = 'http://localhost:51890/api'; // please replace the service name 
+            var service2 = 'http://localhost:50006/'; // please replace the service name 
             //To vote to Candidate for this Poll, this below method will post voted candidate name as json
             $("#btnVote").click(function () {
                 var selectedCandidate = $("#CandidateName option:selected").text();
                 $.ajax({
-                    type: "POST", url: service2 + "/values/",
-                    data: { "votefor": selectedCandidate },
-                    dataType: "json",
+                    type: "POST", url: service2 + "post-vote/",
+                    data: { candidateName: selectedCandidate },
+                   // dataType: "json",
                     success: function () {
                         alert("Voted for:" + selectedCandidate);
                     },
